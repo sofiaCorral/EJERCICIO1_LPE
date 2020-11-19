@@ -26,7 +26,7 @@ attach(dataSet)
 min(Year)
 which.min(Year)
 
-alumnoViejo <- subset(dataSet, Year == viejo, "Nombre")
+alumnoViejo <- subset(dataSet, Year == min(Year), "Nombre")
 alumnoViejo
 
 #2 ¿Cuantos alumnos cumplen años este mes?####
@@ -42,13 +42,21 @@ impares <- subset(dataSet, Expediente%%2 != 0, "Nombre")
 impares
 
 #4 ¿Cual es la palabra mas usada ?, ¿Que significado ?####
+#PASOS PARA NUESTRA DESCRIPCION####
+##instal pack####
+#Comprobamos si tenemos pacman,SnowballC y tidyverse. En caso de no tenerlo, los instalamos.
 
-  #library(tidyverse)
-  #library(tokenizers)
+pacman::p_load(pacman,tm,SnowballC,tidediverse)
+NuestraDescripcion <- readLines(MiDescripcion)
 
-  #tabla <- table(palabras)
-  #tabla <- data_frame(palabra = names(dataSet), recuento = as.numeric(dataSet))
-  #tabla
+#corpus (texto que ya está limpio)####
+
+#term-document matrices y remove (METE TODA LA INFORMACIÓN QUE ME DA EL CORPUS)####
+#calc y sort por frec.(Palabra) CARCULAR Y ORDENAR LO OBTENIDO CON SU FRECUENCIA (SUMA)####
+#tabla de frecuencia####
+#WORDS DISTINTIVE####
+
+ 
 
 #5 Porcentaje de alumnos que hicieron la expo####
 AlumnosSiExpo <- subset(dataSet, PresentadoExpo == 0, "Nombre")
